@@ -1,4 +1,4 @@
-export function Text(string, options={classname: ""}) {
+export function Para(string, options={classname: ""}) {
     if (string == undefined || typeof string != "string") {
         console.error("Text must include string");
         return "";

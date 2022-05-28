@@ -1,12 +1,11 @@
-export function Heading(string, options={classname: "", priority: 1, align: "left"}) {
-	if (string == undefined || typeof string != "string") {
-		console.error("Header must contain string");
+export function Container(items, options={classname: "", align: ""}) {
+    if (items == undefined || typeof items != "object") {
+		console.error("Container must contain array of items");
 		return "";
 	} else {
-		if (options.priority == undefined) options.priority = 1;
+        let info = addItems(items);
 		if (options.classname == undefined) options.classname = "";
-		if (options.id == undefined) options.id = "";
-		let align = "";
+        let align = "";
 		if (options.align != undefined) {
 			if (options.align == "left") {
 				align = 'style="display: flex; flex-direction: column; align-items: start;"';
@@ -18,6 +17,20 @@ export function Heading(string, options={classname: "", priority: 1, align: "lef
 				align = "";
 			}
 		}
-		return `<div ${align}><h${options.priority} class="${options.classname}">${string}</h${options.priority}></div>`		
+		return (
+			`
+			<div class="${options.classname}" ${align}>
+				${info}
+			</div>
+			`
+		)
+    }
+}
+
+function addItems(items) {
+	let ls = "";
+	for (let i=0; i<items.length; i++) {
+		ls += items[i];
 	}
+	return ls;
 }
