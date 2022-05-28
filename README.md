@@ -123,7 +123,7 @@ List must contain an array of either other components or strings.
 ## Container
 
 ```js
-Container(items: Array, options={align: String "left" | "right" | "center"})
+Container(items: Array, options={align: String "left" | "right" | "center", direction: String "row" | "column"})
 ```
 
 container must contain an array of either other components or strings.
