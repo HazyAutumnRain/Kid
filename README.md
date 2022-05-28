@@ -61,7 +61,7 @@ Heading(Text: String, options={classname: String, priority: Number, align: Strin
 
 Text must exist for header to be created
 <p>Priority means the size of the heading (1 - 6)
-<p>Align must be any of the following examples. If anything else, it defaults to being</p>
+<p>Align must be any of the following examples. If anything else, it defaults to being left</p>
 
 ---
 &nbsp;
@@ -83,7 +83,7 @@ Text must exist for Paragraph to be created
 Image(Path: String, options={width: String, height: String, classname: String})
 ```
 
-Path must exist for Image to exist
+Path must exist for Image to be created
 <p>Width and Height must be strings of sizing. Example {width: "50px" height: "35px"}
 
 ---
@@ -95,8 +95,7 @@ Path must exist for Image to exist
 Button(Internal: Any, options={width: String, height: String, classname: String, click: String})
 ```
 
-Internal can be anything including other components. 
-<p>If left blank then it will default to a blank string.
+Internal can be anything including other components. If left blank then it will default to a blank string.
 <p>Click must either lead to a function or be a string of js code.
 
 ---
