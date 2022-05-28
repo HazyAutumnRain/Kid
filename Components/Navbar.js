@@ -1,17 +1,22 @@
-export function Navbar() {
-	return (
-		`
-		<div class="navbar">
-			<img src="assets/placeholder.jpg" width="50px">
-			<ul>
-				<a href="#"><li>Works</li></a>
-				<a href="#"><li>Github</li></a>
-				<a href="#"><li>Info</li></a>
-			</ul>
-			<button id="darkbutton" class="roundbutton" onclick="handleDarkMode()">
-				<img id="btnimage" src="assets/moon.png" width="25px">
-			</button>
-		</div>		
-		`
-	)
+export function Navbar(items) {
+	if (items == undefined || typeof items != "object") {
+		console.error("Navbar must contain array of items");
+	} else {
+		let info = addItems(items);
+		return (
+			`
+			<div class="navigation">
+				${info}
+			</div>
+			`
+		)
+	}
+}
+
+function addItems(items) {
+	let ls = "";
+	for (let i=0; i<items.length; i++) {
+		ls += items[i];
+	}
+	return ls;
 }
